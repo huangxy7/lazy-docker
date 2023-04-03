@@ -1,0 +1,9 @@
+.idea
+.DS_Store
+.env
+nohup.out
+www/*
+!www/localhost/
+.history
+!www/go/
+docker-compose.yml
