@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  cfdns:
+    image: classmatelin/upyun:latest
+    container_name: upyun
+    environment:
+      RUST_LOG: "$CFDNS_LOG_LEVEL"
+      UPYUN_ACCOUNT: "$UPYUN_ACCOUNT"
+    network_mode: "bridge"
+    hostname: "upyun"
