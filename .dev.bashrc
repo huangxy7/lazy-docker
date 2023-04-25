@@ -39,50 +39,50 @@ nginx () {
 
 # php72 composer
 php72 () {
-  docker exec -it php72 php "$@"
+    docker run -it --rm --volume $PWD:/www:rw --workdir /www ld-php72 php "$@"
 }
 composer72 () {
-    docker exec -it php72 sh -c  "cd /www/$(basename $PWD) && composer $@"
+  docker run -it --rm --volume $PWD:/www:rw --workdir /www ld-php72 composer "$@"
 }
 
 # php73 composer
 php73 () {
-  docker exec -it php73 php "$@"
+    docker run -it --rm --volume $PWD:/www:rw --workdir /www ld-php73 php "$@"
 }
 composer73 () {
-    docker exec -it php73 sh -c  "cd /www/$(basename $PWD) && composer $@"
+  docker run -it --rm --volume $PWD:/www:rw --workdir /www ld-php73 composer "$@"
 }
 
 # php74 composer
 php74 () {
-  docker exec -it php74 php "$@"
+    docker run -it --rm --volume $PWD:/www:rw --workdir /www ld-php74 php "$@"
 }
 composer74 () {
-    docker exec -it php74 sh -c  "cd /www/$(basename $PWD) && composer $@"
+  docker run -it --rm --volume $PWD:/www:rw --workdir /www ld-php74 composer "$@"
 }
 
 # php80 composer
 php80 () {
-  docker exec -it php80 php "$@"
+    docker run -it --rm --volume $PWD:/www:rw --workdir /www ld-php80 php "$@"
 }
 composer80 () {
-    docker exec -it php80 sh -c  "cd /www/$(basename $PWD) && composer $@"
+    docker run -it --rm --volume $PWD:/www:rw --workdir /www ld-php80 composer "$@"
 }
 
 # php81 composer
 php81 () {
-  docker exec -it php81 php "$@"
+    docker run -it --rm --volume $PWD:/www:rw --workdir /www ld-php81 php "$@"
 }
 composer81 () {
-    docker exec -it php81 sh -c  "cd /www/$(basename $PWD) && composer $@"
+    docker run -it --rm --volume $PWD:/www:rw --workdir /www ld-php81 composer "$@"
 }
 
 # php82 composer
 php82 () {
-  docker exec -it php82 php "$@"
+  docker run -it --rm --volume $PWD:/www:rw --workdir /www ld-php82 php "$@"
 }
 composer82 () {
-    docker exec -it php82 sh -c  "cd /www/$(basename $PWD) && composer $@"
+  docker run -it --rm --volume $PWD:/www:rw --workdir /www ld-php81 composer "$@"
 }
 
 
