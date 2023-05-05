@@ -82,7 +82,7 @@ php82 () {
   docker run -it --rm --volume $PWD:/www:rw --workdir /www ld-php82 php "$@"
 }
 composer82 () {
-  docker run -it --rm --volume $PWD:/www:rw --workdir /www ld-php81 composer "$@"
+  docker run -it --rm --volume $PWD:/www:rw --workdir /www ld-php82 composer "$@"
 }
 
 
@@ -98,27 +98,27 @@ composer82 () {
 # node16
 alias dnode16='docker exec -it node16 /bin/sh'
 node16 () {
-    docker exec -it node16 sh -c  "node $@"
+  docker run -it --rm --volume $PWD:/www:rw --workdir /www node16 node "$@"
 }
 npm16 () {
-    docker exec -it node16 sh -c  "cd /www/$(basename $PWD) && npm $@"
+  docker run -it --rm --volume $PWD:/www:rw --workdir /www node16 npm "$@"
 }
 
-# # node18
-# alias dnode18='docker exec -it node18 /bin/sh'
-# node18 () {
-#     docker exec -it node18 sh -c  "cd /www/$(basename $PWD) && node $@"
-# }
-# npm18 () {
-#     docker exec -it node18 sh -c  "cd /www/$(basename $PWD) && npm $@"
-# }
+# node18
+alias dnode16='docker exec -it node16 /bin/sh'
+node18 () {
+  docker run -it --rm --volume $PWD:/www:rw --workdir /www node18 node "$@"
+}
+npm18 () {
+  docker run -it --rm --volume $PWD:/www:rw --workdir /www node18 npm "$@"
+}
 
 
-# # go
-# alias dgo='docker exec -it go /bin/sh'
-# go () {
-#     docker exec -it go sh -c  "cd /www/$(basename $PWD) && go $@"
-# }
+# go
+alias dgo='docker exec -it go /bin/sh'
+go () {
+  docker run -it --rm --volume $PWD:/www:rw --workdir /www go go "$@"
+}
 
 # # rust
 # alias drust='docker exec -it rust /bin/sh'
