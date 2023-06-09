@@ -5,6 +5,15 @@ alias dphp74='docker exec -it php74 /bin/sh'
 alias dphp80='docker exec -it php80 /bin/sh'
 alias dphp81='docker exec -it php81 /bin/sh'
 alias dphp82='docker exec -it php82 /bin/sh'
+alias dphpswoole='docker exec -it --workdir /www  php /bin/sh'
+
+phpswoole () {
+  docker exec -it  --workdir /www/$(basename $PWD)  phpswoole php "$@"
+}
+
+composerswoole () {
+  docker exec -it  --workdir /www/$(basename $PWD)  phpswoole composer "$@"
+}
 
 # MYSQL
 alias dmysql5='docker exec -it mysql5 /bin/bash'
@@ -117,7 +126,7 @@ npm18 () {
 # go
 alias dgo='docker exec -it go /bin/sh'
 go () {
-  docker run -it --rm --volume $PWD:/www:rw --workdir /www go go "$@"
+  docker run -it --rm --volume $PWD:/www:rw --workdir /www ld-go go "$@"
 }
 
 # # rust
