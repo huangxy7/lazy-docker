@@ -10,9 +10,29 @@ alias dphpswoole='docker exec -it --workdir /www  php /bin/sh'
 phpswoole () {
   docker exec -it  --workdir /www/$(basename $PWD)  phpswoole php "$@"
 }
-
 composerswoole () {
   docker exec -it  --workdir /www/$(basename $PWD)  phpswoole composer "$@"
+}
+
+php82swoole () {
+  docker exec -it  --workdir /www/$(basename $PWD) php82 php "$@"
+}
+composer82swoole () {
+  docker exec -it  --workdir /www/$(basename $PWD) php82 composer "$@"
+}
+
+php80swoole () {
+  docker exec -it  --workdir /www/$(basename $PWD) php80 php "$@"
+}
+composer80swoole () {
+  docker exec -it  --workdir /www/$(basename $PWD) php80 composer "$@"
+}
+
+php74swoole () {
+  docker exec -it  --workdir /www/$(basename $PWD) php74 php "$@"
+}
+composer74swoole () {
+  docker exec -it  --workdir /www/$(basename $PWD) php74 composer "$@"
 }
 
 # MYSQL
@@ -72,10 +92,10 @@ composer74 () {
 
 # php80 composer
 php80 () {
-    docker run -it --rm --volume $PWD:/www:rw --workdir /www ld-php80 php "$@"
+    docker exec -it  --workdir /www/$(basename $PWD) php80 php "$@"
 }
 composer80 () {
-    docker run -it --rm --volume $PWD:/www:rw --workdir /www ld-php80 composer "$@"
+    docker exec -it  --workdir /www/$(basename $PWD)  php80 composer "$@"
 }
 
 # php81 composer
@@ -124,10 +144,10 @@ npm18 () {
 
 
 # go
-alias dgo='docker exec -it go /bin/sh'
-go () {
-  docker run -it --rm --volume $PWD:/www:rw --workdir /www ld-go go "$@"
-}
+# alias dgo='docker exec -it go /bin/sh'
+# go () {
+#   docker run -it --rm --volume $PWD:/www:rw --workdir /www ld-go go "$@"
+# }
 
 # # rust
 # alias drust='docker exec -it rust /bin/sh'
